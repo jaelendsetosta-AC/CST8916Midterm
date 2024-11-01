@@ -1,6 +1,3 @@
-Ensure that your repository contains an organized README.md explaining the project setup, 
-environment configuration, and how to run the service locally.  
-
 # CST8916 Midterm REST API
 
 ## Project Setup

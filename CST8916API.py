@@ -4,6 +4,10 @@
 # request: to access incoming request data (e.g., POST data)
 # abort: to handle errors and send error status codes
 from flask import Flask, jsonify, request, abort
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -94,4 +98,5 @@ def delete_student(student_id):
 # The app will run on host 0.0.0.0 (accessible on all network interfaces) and port 8000.
 # Debug mode is disabled (set to False).
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=8000)
+    port = int(os.getenv('PORT', 8000))
+    app.run(debug=False, host='0.0.0.0', port=port)
